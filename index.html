@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoops Through It!</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<main class="menu">
+<p class="eyebrow">NEON BASKETBALL ARCADE</p>
+<p class="creator-credit">A GAME BY <span>TANIYA JAYLYN</span></p>
+<h1><span class="hoops">HOOPS</span><span class="through">THROUGH IT!</span></h1>
+<div class="ball-area"><div class="basketball"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="ballColor" cx="30%" cy="25%"><stop offset="0%" stop-color="#ffc36a"/><stop offset="65%" stop-color="#ff912e"/><stop offset="100%" stop-color="#d75b19"/></radialGradient></defs><circle cx="50" cy="50" r="47" fill="url(#ballColor)" stroke="#ffbd70" stroke-width="2"/><g fill="none" stroke="#633015" stroke-width="3.5" stroke-linecap="round"><path d="M3 50 H97"/><path d="M50 3 V97"/><path d="M18 14 C60 34 60 66 18 86"/><path d="M82 14 C40 34 40 66 82 86"/></g></svg></div><div class="shadow"></div></div>
+<p class="tagline">FLY HIGH. AIM TRUE. BEAT YOUR BEST.</p>
+<div class="buttons"><button id="playBtn" class="play">START GAME</button><button id="howBtn">HOW TO PLAY</button><button id="scoresBtn">HIGH SCORES</button></div>
+<div class="audio-controls" aria-label="Audio settings"><button class="audio-toggle" data-audio="music" type="button">MUSIC: ON</button><button class="audio-toggle" data-audio="sfx" type="button">SFX: ON</button></div>
+<p id="message" class="message" aria-live="polite"></p>
+</main>
+
+<section id="instructions" class="screen hidden"><div class="screen-content">
+<h2>HOW TO PLAY</h2>
+<div class="instruction-card"><h3>KEEP IT FLYING</h3><p>Press SPACE or click to keep the basketball in the air.</p></div>
+<div class="instruction-card"><h3>GET THROUGH</h3><p>Fly through openings without hitting the barriers.</p></div>
+<div class="instruction-card"><h3>BUILD YOUR STREAK</h3><p>Pass through hoops to score points. Hit the center for a SWISH bonus!</p></div>
+<div class="instruction-card"><h3>BEAT YOUR BEST</h3><p>Survive as long as possible and beat your high score!</p></div>
+<button id="backBtn">BACK TO MENU</button>
+</div></section>
+
+<section id="gameScreen" class="screen hidden"><div class="screen-content">
+<h2>READY TO BALL?</h2>
+<p class="tagline">LET'S SEE WHAT YOU'VE GOT!</p>
+<div class="court-container">
+<canvas id="gameCanvas" width="400" height="550"></canvas>
+<p class="game-hint">PRESS SPACE, CLICK OR TAP TO FLY 🏀</p>
+</div>
+<div class="audio-controls" aria-label="Audio settings">
+<button class="audio-toggle" data-audio="music" type="button">MUSIC: ON</button>
+<button class="audio-toggle" data-audio="sfx" type="button">SFX: ON</button>
+</div>
+<button id="restartBtn" class="hidden">PLAY AGAIN ↻</button>
+<button id="gameBackBtn">BACK TO MENU</button>
+</div></section>
+
+<section id="modeScreen" class="screen hidden"><div class="screen-content">
+<h2>SELECT YOUR MODE</h2>
+<div class="mode-options">
+<button class="mode-card endless" data-mode="endless"><span class="mode-title">∞ ENDLESS MODE</span><span class="mode-description">HOW FAR CAN YOU GO?</span></button>
+<button class="mode-card timed" data-mode="timed"><span class="mode-title">⏱ TIME ATTACK</span><span class="mode-description">60 SECONDS. MAXIMUM POINTS.</span></button>
+<button class="mode-card challenge" data-mode="challenge"><span class="mode-title">★ CHALLENGE MODE</span><span class="mode-description">COMPLETE LEVELS. PROVE YOUR SKILLS.</span></button>
+</div>
+<button id="modeBackBtn">BACK TO MENU</button>
+</div></section>
+
+<section id="leaderboardScreen" class="screen hidden"><div class="screen-content">
+<h2>🏆 HIGH SCORES</h2>
+<p class="tagline">ENDLESS MODE • TOP 10</p>
+<div class="leaderboard-panel">
+<div class="leaderboard-heading"><span>RANK</span><span>PLAYER</span><span>SCORE</span></div>
+<div id="leaderboardRows"></div>
+</div>
+<p class="leaderboard-note">Scores are saved in this browser.</p>
+<button id="leaderboardBackBtn">BACK TO MENU</button>
+</div></section>
+
+<section id="nameScreen" class="screen hidden"><div class="screen-content">
+<h2>YOU MADE THE TOP 10!</h2>
+<p class="tagline">ADD YOUR NAME TO THE LEADERBOARD</p>
+<div class="name-panel">
+<p id="qualifyingScore" class="qualifying-score">SCORE: 0</p>
+<form id="nameForm">
+<label for="playerName">PLAYER NAME</label>
+<input id="playerName" name="playerName" maxlength="14" autocomplete="off" placeholder="YOUR NAME" required>
+<button class="play" type="submit">SAVE MY SCORE</button>
+</form>
+<button id="skipNameBtn" type="button">SKIP</button>
+</div>
+</div></section>
+</body>
+</html>
